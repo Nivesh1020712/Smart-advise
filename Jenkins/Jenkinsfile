@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clone Repo') {
       steps {
-        git 'https://github.com/your-username/smart-expense-advisor.git'
+        git 'https://github.com/Nivesh1020712/Smart-advise.git'
       }
     }
     stage('Install Dependencies') {

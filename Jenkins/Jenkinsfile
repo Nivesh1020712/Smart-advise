@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git branch: 'main', url: 'https://github.com/yourname/cloud-expense-tracker.git'
+        git branch: 'main', url: ''
       }
     }
     stage('Build Docker') {

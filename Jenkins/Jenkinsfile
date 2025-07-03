@@ -1,18 +1,31 @@
 pipeline {
   agent any
   stages {
-    stage('Clone Repo') {
+    stage('Clone') {
       steps {
-        git 'https://github.com/Nivesh1020712/Smart-advise.git'
+        git branch: 'main', url: 'https://github.com/yourname/cloud-expense-tracker.git'
       }
     }
-    stage('Install Dependencies') {
+    stage('Build Docker') {
       steps {
-        sh 'pip install -r backend/requirements.txt'
+        sh 'docker build -t invoice-api ./backend/invoice_api'
+        sh 'docker build -t smart-save ./backend/smart_save'
+        sh 'docker build -t spent-history ./backend/spent_history'
+      }
+    }
+    stage('Push to ECR') {
+      steps {
+        // AWS CLI push to ECS container registry (ECR)
+      }
+    }
+    stage('Deploy to ECS') {
+      steps {
+        // Use ECS service update or blue-green deployment
       }
     }
   }
 }
+
 
 
 

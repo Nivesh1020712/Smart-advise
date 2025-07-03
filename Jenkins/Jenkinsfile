@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git branch: 'main', url: ''
+        git branch: 'main', url: 'https://github.com/Nivesh1020712/Smart-advise.git'
       }
     }
     stage('Build Docker') {
